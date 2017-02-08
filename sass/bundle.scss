@@ -1,0 +1,165 @@
+@import 'node_modules/reset-css/_reset';
+@import 'fonts';
+
+// Settings
+
+$header-font: 'Amatic SC', cursive;
+$body-font: 'Roboto', sans-serif;
+$body-font-size: 18px;
+
+$light-text-color: #e2e2e2;
+$dark-text-color: #333333;
+
+$global-spacing: 8px;
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: $body-font-size;
+    font-family: $body-font;
+    color: $dark-text-color;
+}
+
+.site-title {
+    text-align: center;
+    padding: $global-spacing;
+    margin-bottom: $global-spacing;
+    margin-top: $global-spacing * 3;
+    text-transform: uppercase;
+    font-size: 145%;
+    font-weight: 900;
+    letter-spacing: 10px;
+}
+
+nav.site-nav { 
+    font-size: 90%;
+    letter-spacing: 2px;
+    // font-weight: 500;
+
+    ul {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        
+        li {
+            display: inline-block;
+            text-transform: uppercase;
+            list-style: none;
+            padding: $global-spacing;
+            margin: $global-spacing;
+
+            a, a:visited {
+                text-decoration: none;
+                color: $dark-text-color;
+            }
+        }
+    }
+}
+
+.section-title {
+    text-align: center;
+    font-size: 250%;
+    font-family: $header-font;
+    margin: $global-spacing * 2;
+}
+
+section {
+    min-height: calc(100% - #{$global-spacing * 2 * 2});
+    padding: $global-spacing * 2;
+    margin: 0;
+}
+
+section#hello {
+    display: flex;
+    flex-direction: column;
+
+    .container {
+        flex-grow: 1;
+        justify-content: center;
+        margin-top: $global-spacing * 3;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: 100%;
+
+        .image-container {
+            width: 65%;
+            overflow: hidden;
+            align-self: center;  
+
+            .home-image {
+                width: 100%;
+            }
+        }
+
+        .text-container {
+            width: 30%;
+            align-self: center;
+            padding-top: $global-spacing * 6;
+
+            .hello-intro {
+                font-family: $header-font;
+                font-size: 320%;
+                margin-left: -100px;
+            }
+
+            .hello-intro-emphasis {
+                font-family: $header-font;
+                font-size: 550%;
+                margin-left: -50px;
+            }
+            
+            .hello-intro-content {
+                text-align: left;
+                margin-top: $global-spacing * 4;
+                margin-left: $global-spacing * 2;
+                letter-spacing: 2px;
+                font-size: 90%;
+                line-height: 150%;
+            }
+        }
+    }
+}
+
+section#about {
+    background-color: #292929;
+    color: $light-text-color;
+}
+
+section#contact{
+    background-color: #137573;
+    color: $light-text-color;
+    display: flex;
+    flex-direction: column;
+
+    .contact-info-container {
+        flex-grow: 1;
+        justify-content: center;
+        padding: $global-spacing;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        letter-spacing: 2px;
+
+        .contact-info-item {
+            padding: $global-spacing * 2;
+            
+            .contact-info-label {
+                margin-bottom: $global-spacing;
+            }
+
+            .contact-info-detail {
+                font-size: 140%;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
