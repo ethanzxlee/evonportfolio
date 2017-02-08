@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "finalhandler": "^0.5.1",
+    "http": "0.0.0",
     "reset-css": "^2.2.0",
     "serve-static": "^1.11.2"
   },
