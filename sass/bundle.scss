@@ -2,10 +2,12 @@
 @import 'fonts';
 
 // Settings
+$mobile-only-media-query: "screen and (max-width : 425px)";
 
 $header-font: 'Amatic SC', cursive;
 $body-font: 'Roboto', sans-serif;
 $body-font-size: 18px;
+$body-font-size-mobile: 14px;
 
 $light-text-color: #e2e2e2;
 $dark-text-color: #333333;
@@ -13,6 +15,9 @@ $dark-text-color: #333333;
 $global-spacing: 8px;
 
 $site-nav-height: 60px;
+$site-nav-height-mobile: 40px;
+
+
 
 html, body {
     height: 100%;
@@ -22,6 +27,10 @@ html, body {
     color: $dark-text-color;
     letter-spacing: 1.5px;
     line-height: 140%;
+
+    @media #{$mobile-only-media-query} {
+        font-size: $body-font-size-mobile;
+    }
 }
 
 strong {
@@ -32,7 +41,6 @@ strong {
     text-align: center;
     padding: $global-spacing;
     margin-bottom: $global-spacing;
-    margin-top: $global-spacing * 3;
     text-transform: uppercase;
     font-size: 145%;
     font-weight: 900;
@@ -42,9 +50,17 @@ strong {
 .site-nav-container {
     height: $site-nav-height;
 
+    @media #{$mobile-only-media-query} {
+        height: $site-nav-height-mobile;
+    }
+
     nav.site-nav { 
         font-size: 90%;
         letter-spacing: 2px;
+
+        @media #{$mobile-only-media-query} {
+            font-size: 80%;
+        }
         
         &.sticky {
             position: fixed;
@@ -52,19 +68,34 @@ strong {
             top: 0;
             left: 0;
             right: 0;
+            padding-left: $global-spacing * 2;
+            padding-right: $global-spacing * 2;
+            z-index: 999;
         }
 
         ul {
             text-align: center;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+
+            @media #{$mobile-only-media-query} {
+                justify-content: space-around;
+            }
             
             li {
-                display: inline-block;
+                // display: inline-block;
                 text-transform: uppercase;
                 list-style: none;
                 padding: $global-spacing;
                 margin: $global-spacing;
+
+                @media #{$mobile-only-media-query} {
+                    padding: 0;
+                    margin: $global-spacing 0;
+                    font-size: 88%;
+                }
 
                 a, a:visited {
                     text-decoration: none;
@@ -77,38 +108,61 @@ strong {
 
 .section-title {
     text-align: center;
-    font-size: 250%;
+    font-size: 300%;
     font-family: $header-font;
     margin: $global-spacing * 2;
 }
 
 section {
-    min-height: calc(100% - #{($global-spacing * 2) + $site-nav-height});
-    padding: $global-spacing * 2;
+    min-height: calc(100% - #{($global-spacing * 2) + $site-nav-height + $global-spacing * 2});
     margin: 0;
-    padding-top: $site-nav-height;
+    padding-top: $site-nav-height + $global-spacing * 2;
+    padding-bottom: $global-spacing * 2;
+    padding-left: $global-spacing * 2;
+    padding-right: $global-spacing * 2;
     display: flex;
     flex-direction: column;
+    width: calc(100% - #{$global-spacing * 2 * 2});
+
+    @media #{$mobile-only-media-query} {
+        padding-top: $site-nav-height-mobile + $global-spacing * 2;
+        min-height: calc(100% - #{($global-spacing * 2) + $site-nav-height-mobile + $global-spacing * 2});        
+    }
 
     .container {
         flex-grow: 1;
         justify-content: center;
         margin-top: $global-spacing * 3;
+        margin-bottom: $global-spacing * 3;
         margin-left: auto;
         margin-right: auto;
         display: flex;
         width: 100%;
+
+        @media #{$mobile-only-media-query} {
+            margin-top: $global-spacing;
+            margin-bottom: $global-spacing;
+        }
     }
 }
 
 section#hello {
     min-height: calc(100% - #{($global-spacing * 2 * 2)});
     padding-top: $global-spacing * 2;
+   
     .container {
+        @media #{$mobile-only-media-query} {
+            flex-direction: column;
+        }
+
         .image-container {
             width: 65%;
             overflow: hidden;
             align-self: center;  
+
+            @media #{$mobile-only-media-query} {
+                width: 100%;
+            }
 
             .hello-image {
                 width: 100%;
@@ -120,11 +174,24 @@ section#hello {
             align-self: center;
             padding-top: $global-spacing * 6;
 
+            @media #{$mobile-only-media-query} {
+                width: 100%;
+                padding-top: 0;
+                display: flex;
+                justify-content: center;
+            }
+
             .hello-intro {
                 font-family: $header-font;
                 font-size: 320%;
                 margin-left: -100px;
                 line-height: initial;
+                
+                @media #{$mobile-only-media-query} {
+                    font-size: 250%;
+                    margin-left: 0;
+                    position: absolute;
+                }
             }
 
             .hello-intro-emphasis {
@@ -132,6 +199,12 @@ section#hello {
                 font-size: 550%;
                 margin-left: -50px;
                 line-height: initial;
+
+                @media #{$mobile-only-media-query} {
+                    font-size: 320%;
+                    margin-left: 0;
+                    position: absolute;
+                }
             }
             
             .hello-intro-content {
@@ -140,6 +213,11 @@ section#hello {
                 margin-left: $global-spacing * 2;
                 font-size: 90%;
                 line-height: 150%;
+
+                 @media #{$mobile-only-media-query} {
+                    font-size: 100%;
+                    margin: 0;
+                }
             }
         }
     }
@@ -173,11 +251,20 @@ section#contact{
             
             .contact-info-label {
                 margin-bottom: $global-spacing;
+
+                @media #{$mobile-only-media-query} {
+                    font-size: 80%;
+                }
             }
 
             .contact-info-detail {
                 font-size: 140%;
                 font-weight: 500;
+                overflow-wrap: break-word;
+
+                @media #{$mobile-only-media-query} {
+                    font-size: 95%;
+                }
             }
         }
     }
