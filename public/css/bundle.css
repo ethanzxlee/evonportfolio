@@ -36,6 +36,9 @@ html, body {
   letter-spacing: 1.5px;
   line-height: 140%; }
 
+strong {
+  font-weight: bold; }
+
 .site-title {
   text-align: center;
   padding: 8px;
@@ -46,23 +49,33 @@ html, body {
   font-weight: 900;
   letter-spacing: 10px; }
 
-nav.site-nav {
+.site-nav-container {
+  height: 60px; }
+
+.site-nav-container nav.site-nav {
   font-size: 90%;
   letter-spacing: 2px; }
 
-nav.site-nav ul {
+.site-nav-container nav.site-nav.sticky {
+  position: fixed;
+  background: #ffffff;
+  top: 0;
+  left: 0;
+  right: 0; }
+
+.site-nav-container nav.site-nav ul {
   text-align: center;
   margin: 0;
   padding: 0; }
 
-nav.site-nav ul li {
+.site-nav-container nav.site-nav ul li {
   display: inline-block;
   text-transform: uppercase;
   list-style: none;
   padding: 8px;
   margin: 8px; }
 
-nav.site-nav ul li a, nav.site-nav ul li a:visited {
+.site-nav-container nav.site-nav ul li a, .site-nav-container nav.site-nav ul li a:visited {
   text-decoration: none;
   color: #333; }
 
@@ -73,9 +86,10 @@ nav.site-nav ul li a, nav.site-nav ul li a:visited {
   margin: 16px; }
 
 section {
-  min-height: calc(100% - 32px);
+  min-height: calc(100% - 76px);
   padding: 16px;
   margin: 0;
+  padding-top: 60px;
   display: flex;
   flex-direction: column; }
 
@@ -87,6 +101,10 @@ section .container {
   margin-right: auto;
   display: flex;
   width: 100%; }
+
+section#hello {
+  min-height: calc(100% - 32px);
+  padding-top: 16px; }
 
 section#hello .container .image-container {
   width: 65%;

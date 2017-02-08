@@ -12,6 +12,7 @@ $dark-text-color: #333333;
 
 $global-spacing: 8px;
 
+$site-nav-height: 60px;
 
 html, body {
     height: 100%;
@@ -21,6 +22,10 @@ html, body {
     color: $dark-text-color;
     letter-spacing: 1.5px;
     line-height: 140%;
+}
+
+strong {
+    font-weight: bold;
 }
 
 .site-title {
@@ -34,25 +39,37 @@ html, body {
     letter-spacing: 10px;
 }
 
-nav.site-nav { 
-    font-size: 90%;
-    letter-spacing: 2px;
+.site-nav-container {
+    height: $site-nav-height;
 
-    ul {
-        text-align: center;
-        margin: 0;
-        padding: 0;
+    nav.site-nav { 
+        font-size: 90%;
+        letter-spacing: 2px;
         
-        li {
-            display: inline-block;
-            text-transform: uppercase;
-            list-style: none;
-            padding: $global-spacing;
-            margin: $global-spacing;
+        &.sticky {
+            position: fixed;
+            background:#ffffff;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
 
-            a, a:visited {
-                text-decoration: none;
-                color: $dark-text-color;
+        ul {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            
+            li {
+                display: inline-block;
+                text-transform: uppercase;
+                list-style: none;
+                padding: $global-spacing;
+                margin: $global-spacing;
+
+                a, a:visited {
+                    text-decoration: none;
+                    color: $dark-text-color;
+                }
             }
         }
     }
@@ -66,9 +83,10 @@ nav.site-nav {
 }
 
 section {
-    min-height: calc(100% - #{$global-spacing * 2 * 2});
+    min-height: calc(100% - #{($global-spacing * 2) + $site-nav-height});
     padding: $global-spacing * 2;
     margin: 0;
+    padding-top: $site-nav-height;
     display: flex;
     flex-direction: column;
 
@@ -84,6 +102,8 @@ section {
 }
 
 section#hello {
+    min-height: calc(100% - #{($global-spacing * 2 * 2)});
+    padding-top: $global-spacing * 2;
     .container {
         .image-container {
             width: 65%;
