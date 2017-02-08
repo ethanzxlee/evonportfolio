@@ -1,21 +1,5 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC|Roboto:400,500,900");
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-main, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -23,9 +7,7 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline; }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, main, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
   display: block; }
 
 body {
@@ -36,9 +18,10 @@ ol, ul {
 
 blockquote, q {
   quotes: none; }
-  blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
 
 table {
   border-collapse: collapse;
@@ -48,8 +31,10 @@ html, body {
   height: 100%;
   width: 100%;
   font-size: 18px;
-  font-family: "Roboto", sans-serif;
-  color: #333333; }
+  font-family: "Roboto",sans-serif;
+  color: #333;
+  letter-spacing: 1.5px;
+  line-height: 140%; }
 
 .site-title {
   text-align: center;
@@ -64,89 +49,103 @@ html, body {
 nav.site-nav {
   font-size: 90%;
   letter-spacing: 2px; }
-  nav.site-nav ul {
-    text-align: center;
-    margin: 0;
-    padding: 0; }
-    nav.site-nav ul li {
-      display: inline-block;
-      text-transform: uppercase;
-      list-style: none;
-      padding: 8px;
-      margin: 8px; }
-      nav.site-nav ul li a, nav.site-nav ul li a:visited {
-        text-decoration: none;
-        color: #333333; }
+
+nav.site-nav ul {
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+
+nav.site-nav ul li {
+  display: inline-block;
+  text-transform: uppercase;
+  list-style: none;
+  padding: 8px;
+  margin: 8px; }
+
+nav.site-nav ul li a, nav.site-nav ul li a:visited {
+  text-decoration: none;
+  color: #333; }
 
 .section-title {
   text-align: center;
   font-size: 250%;
-  font-family: "Amatic SC", cursive;
+  font-family: "Amatic SC",cursive;
   margin: 16px; }
 
 section {
   min-height: calc(100% - 32px);
   padding: 16px;
-  margin: 0; }
-
-section#hello {
+  margin: 0;
   display: flex;
   flex-direction: column; }
-  section#hello .container {
-    flex-grow: 1;
-    justify-content: center;
-    margin-top: 24px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    width: 100%; }
-    section#hello .container .image-container {
-      width: 65%;
-      overflow: hidden;
-      align-self: center; }
-      section#hello .container .image-container .home-image {
-        width: 100%; }
-    section#hello .container .text-container {
-      width: 30%;
-      align-self: center;
-      padding-top: 48px; }
-      section#hello .container .text-container .hello-intro {
-        font-family: "Amatic SC", cursive;
-        font-size: 320%;
-        margin-left: -100px; }
-      section#hello .container .text-container .hello-intro-emphasis {
-        font-family: "Amatic SC", cursive;
-        font-size: 550%;
-        margin-left: -50px; }
-      section#hello .container .text-container .hello-intro-content {
-        text-align: left;
-        margin-top: 32px;
-        margin-left: 16px;
-        letter-spacing: 2px;
-        font-size: 90%;
-        line-height: 150%; }
+
+section .container {
+  flex-grow: 1;
+  justify-content: center;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%; }
+
+section#hello .container .image-container {
+  width: 65%;
+  overflow: hidden;
+  align-self: center; }
+
+section#hello .container .image-container .hello-image {
+  width: 100%; }
+
+section#hello .container .text-container {
+  width: 30%;
+  align-self: center;
+  padding-top: 48px; }
+
+section#hello .container .text-container .hello-intro {
+  font-family: "Amatic SC",cursive;
+  font-size: 320%;
+  margin-left: -100px;
+  line-height: initial; }
+
+section#hello .container .text-container .hello-intro-emphasis {
+  font-family: "Amatic SC",cursive;
+  font-size: 550%;
+  margin-left: -50px;
+  line-height: initial; }
+
+section#hello .container .text-container .hello-intro-content {
+  text-align: left;
+  margin-top: 32px;
+  margin-left: 16px;
+  font-size: 90%;
+  line-height: 150%; }
 
 section#about {
   background-color: #292929;
   color: #e2e2e2; }
 
+section#about .container {
+  flex-direction: column;
+  text-align: center;
+  max-width: 90%; }
+
+section#about .container p {
+  margin: 16px; }
+
 section#contact {
   background-color: #137573;
-  color: #e2e2e2;
-  display: flex;
+  color: #e2e2e2; }
+
+section#contact .container {
+  text-align: center;
   flex-direction: column; }
-  section#contact .contact-info-container {
-    flex-grow: 1;
-    justify-content: center;
-    padding: 8px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    letter-spacing: 2px; }
-    section#contact .contact-info-container .contact-info-item {
-      padding: 16px; }
-      section#contact .contact-info-container .contact-info-item .contact-info-label {
-        margin-bottom: 8px; }
-      section#contact .contact-info-container .contact-info-item .contact-info-detail {
-        font-size: 140%;
-        font-weight: 500; }
+
+section#contact .container .contact-info-item {
+  padding: 16px; }
+
+section#contact .container .contact-info-item .contact-info-label {
+  margin-bottom: 8px; }
+
+section#contact .container .contact-info-item .contact-info-detail {
+  font-size: 140%;
+  font-weight: 500; }
