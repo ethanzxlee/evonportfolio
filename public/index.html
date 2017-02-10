@@ -13,11 +13,11 @@
         <h1 class="site-title">Lee Evon</h1>
         <div id="site-nav-container" class="site-nav-container">
             <nav id="site-nav" class="site-nav">
-                <ul>
-                    <li class="active"><a href="#hello">Hello</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Project</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="site-nav-list">
+                    <li id="link-section-hello" class="active"><a href="#hello">Hello</a></li>
+                    <li id="link-section-about"><a href="#about">About Me</a></li>
+                    <li id="link-section-projects"><a href="#projects">Project</a></li>
+                    <li id="link-section-contact"><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,7 +35,7 @@
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="light-text">
         <h2 class="section-title">About Me</h2>
         <div class="container">
             <p>A short brief about <strong>who I am</strong>.</p>
@@ -52,8 +52,6 @@
         <h2 class="section-title">Projects</h2>
         <div class="container">
             <div class="projects-content-menu">
-                <!--<input type="radio" name="projects-content-menu-tab" id="projects-content-tab-all" value="all" checked/>
-                <label for="projects-content-tab-all">All</label>-->
                 <input type="radio" name="projects-content-menu-tab" id="projects-content-tab-photography" value="photography" checked/>
                 <label for="projects-content-tab-photography">Photography</label>
                 <input type="radio" name="projects-content-menu-tab" id="projects-content-tab-fine-arts" value="fine_arts" />
@@ -64,23 +62,7 @@
                 <label for="projects-content-tab-digital">Digital</label>
             </div>
             <div class="projects-content-container">
-                <div class="projects-content-item-container" data-category="photography">
-                    <img class="thumbnail" src="img/photography/1_thumb.jpg" srcset="img/photography/1_thumb.jpg 1x, img/photography/1_thumb_2x.jpg 2x"/>
-                </div>
-                <div class="projects-content-item-container" data-category="photography">
-                    <img class="thumbnail" src="img/photography/2_thumb.jpg" srcset="img/photography/2_thumb.jpg 1x, img/photography/2_thumb_2x.jpg 2x"/>
-                </div>
-                <div class="projects-content-item-container" data-category="photography">
-                    <img class="thumbnail" src="img/photography/3_thumb.jpg" srcset="img/photography/3_thumb.jpg 1x, img/photography/3_thumb_2x.jpg 2x"/>
-                </div>
-                <div class="projects-content-item-container" data-category="photography">
-                    <img class="thumbnail" src="img/photography/4_thumb.jpg" srcset="img/photography/4_thumb.jpg 1x, img/photography/4_thumb_2x.jpg 2x"/>
-                </div>
-                <div class="projects-content-item-container" data-category="photography">
-                    <img class="thumbnail" src="img/photography/5_thumb.jpg" srcset="img/photography/5_thumb.jpg 1x, img/photography/5_thumb_2x.jpg 2x"/>
-                </div>
-                <div class="projects-content-item-container" data-category="fine_arts">
-                    <img class="thumbnail" src="img/fine_arts/1_thumb.jpg" srcset="img/fine_arts/1_thumb.jpg 1x, img/fine_arts/1_thumb_2x.jpg 2x"/>
+                <div class="projects-content-container-wrapper">
                 </div>
             </div>
         </div>
