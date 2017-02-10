@@ -5,16 +5,25 @@ var siteNavContainer;
 var helloImage;
 var helloIntro;
 var helloIntroEmphasis;
+var projectsContentMenuTab;
+var projectsContentItemContainers;
 
-$(window).on('load', function() {
+$(window).on('load', onLoad);
+
+function onLoad() {
     findElements();
+
+    // Update layouts
     updateStickySiteNav();
     layoutHelloIntroText();
-});
-
-$(window).on('scroll', updateStickySiteNav);
-$(window).on('resize', updateStickySiteNav);
-$(window).on('resize', layoutHelloIntroText);
+    filterProjectType();
+    
+    // Attach listeners
+    $(window).on('scroll', updateStickySiteNav);
+    $(window).on('resize', updateStickySiteNav);
+    $(window).on('resize', layoutHelloIntroText);
+    projectsContentMenuTab.on('change', filterProjectType);
+}
 
 function findElements() {
     siteNav = $('#site-nav');
@@ -22,6 +31,26 @@ function findElements() {
     helloImage = $('#hello-image');
     helloIntro = $('#hello-intro');
     helloIntroEmphasis = $('#hello-intro-emphasis');
+    projectsContentMenuTab = $('input[name=projects-content-menu-tab]')
+    projectsContentItemContainers = $('.projects-content-item-container');
+}
+
+function filterProjectType() {
+    var checkedCategory = projectsContentMenuTab.filter(":checked").val();
+    var visibleProjects;
+    var hiddenProjects;
+    
+    if (checkedCategory == 'all') {
+        visibleProjects = projectsContentItemContainers;
+        visibleProjects.removeClass('hidden');
+    } else {
+        visibleProjects = projectsContentItemContainers.filter('[data-category="' + checkedCategory + '"]');
+        hiddenProjects = projectsContentItemContainers.not('[data-category="' + checkedCategory + '"]');
+        hiddenProjects.addClass('hidden');
+        visibleProjects.removeClass('hidden');
+    }
+    
+    
 }
 
 function updateStickySiteNav() {
@@ -45,5 +74,8 @@ function layoutHelloIntroText() {
 
         helloIntro.css('top', helloImageOffsetTop - helloIntroCombinedHeight);
         helloIntroEmphasis.css('top', helloImageOffsetTop - helloIntroEmphasisHeight)
+    }
+    else {
+        helloImage.css('margin-top', 'initial');
     }
 }

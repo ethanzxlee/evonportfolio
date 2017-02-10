@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title></title>    
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bundle.css" rel="stylesheet" />
     <script src="js/bundle.js" type="text/javascript"></script>
 </head>
+
 <body>
     <section id="hello">
         <h1 class="site-title">Lee Evon</h1>
         <div id="site-nav-container" class="site-nav-container">
             <nav id="site-nav" class="site-nav">
                 <ul>
-                    <li><a href="#hello">Hello</a></li>
+                    <li class="active"><a href="#hello">Hello</a></li>
                     <li><a href="#about">About Me</a></li>
                     <li><a href="#projects">Project</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -26,7 +28,9 @@
             <div class="text-container">
                 <p id="hello-intro" class="hello-intro">this is my</p>
                 <p id="hello-intro-emphasis" class="hello-intro-emphasis">portfolio</p>
-                <p id="hello-intro-content" class="hello-intro-content">hello, nice to meet you! I'm a student possessing degree courses in <strong>#advertising</strong> at UTAR, Kampar.</p>
+                <p id="hello-intro-content" class="hello-intro-content">hello, nice to meet you! I'm a student possessing degree courses in <strong>#advertising</strong> at UTAR,
+                    Kampar.
+                </p>
             </div>
         </div>
     </section>
@@ -34,13 +38,52 @@
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="container">
-        <p>A short brief about <strong>who I am</strong>.</p>
-        <p>I am passionate in designing beautiful artworks to share it with people around. This makes me an enthusiast in photography and travelling to shoot good pictures. Throughout my studies, I’ve been praised for the paintings or drawing I created in watercolour and pencils by my peers. I am willing to learn new things and also a quick learner who can works independently. I am punctual and hardworking to ensure that my task or job is completed in the given time. I can speak, listen and write in English, Chinese and Malay. I can perform tasks with Adobe Photoshop, Illustrator, Premiere Pro and Flash as well as Microsoft Office.</p>
+            <p>A short brief about <strong>who I am</strong>.</p>
+            <p>I am passionate in designing beautiful artworks to share it with people around. This makes me an enthusiast in
+                photography and travelling to shoot good pictures. Throughout my studies, I’ve been praised for the paintings
+                or drawing I created in watercolour and pencils by my peers. I am willing to learn new things and also a
+                quick learner who can works independently. I am punctual and hardworking to ensure that my task or job is
+                completed in the given time. I can speak, listen and write in English, Chinese and Malay. I can perform tasks
+                with Adobe Photoshop, Illustrator, Premiere Pro and Flash as well as Microsoft Office.</p>
         </div>
     </section>
 
     <section id="projects">
         <h2 class="section-title">Projects</h2>
+        <div class="container">
+            <div class="projects-content-menu">
+                <!--<input type="radio" name="projects-content-menu-tab" id="projects-content-tab-all" value="all" checked/>
+                <label for="projects-content-tab-all">All</label>-->
+                <input type="radio" name="projects-content-menu-tab" id="projects-content-tab-photography" value="photography" checked/>
+                <label for="projects-content-tab-photography">Photography</label>
+                <input type="radio" name="projects-content-menu-tab" id="projects-content-tab-fine-arts" value="fine_arts" />
+                <label for="projects-content-tab-fine-arts">Fine Arts</label>
+                <input type="radio" name="projects-content-menu-tab" id="projects-content-tab-branding" value="branding" />
+                <label for="projects-content-tab-branding">Branding</label>
+                <input type="radio" name="projects-content-menu-tab" id="projects-content-tab-digital" value="digital" />
+                <label for="projects-content-tab-digital">Digital</label>
+            </div>
+            <div class="projects-content-container">
+                <div class="projects-content-item-container" data-category="photography">
+                    <img class="thumbnail" src="img/photography/1_thumb.jpg" srcset="img/photography/1_thumb.jpg 1x, img/photography/1_thumb_2x.jpg 2x"/>
+                </div>
+                <div class="projects-content-item-container" data-category="photography">
+                    <img class="thumbnail" src="img/photography/2_thumb.jpg" srcset="img/photography/2_thumb.jpg 1x, img/photography/2_thumb_2x.jpg 2x"/>
+                </div>
+                <div class="projects-content-item-container" data-category="photography">
+                    <img class="thumbnail" src="img/photography/3_thumb.jpg" srcset="img/photography/3_thumb.jpg 1x, img/photography/3_thumb_2x.jpg 2x"/>
+                </div>
+                <div class="projects-content-item-container" data-category="photography">
+                    <img class="thumbnail" src="img/photography/4_thumb.jpg" srcset="img/photography/4_thumb.jpg 1x, img/photography/4_thumb_2x.jpg 2x"/>
+                </div>
+                <div class="projects-content-item-container" data-category="photography">
+                    <img class="thumbnail" src="img/photography/5_thumb.jpg" srcset="img/photography/5_thumb.jpg 1x, img/photography/5_thumb_2x.jpg 2x"/>
+                </div>
+                <div class="projects-content-item-container" data-category="fine_arts">
+                    <img class="thumbnail" src="img/fine_arts/1_thumb.jpg" srcset="img/fine_arts/1_thumb.jpg 1x, img/fine_arts/1_thumb_2x.jpg 2x"/>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contact" class="light-text">
@@ -65,4 +108,5 @@
         </div>
     </section>
 </body>
+
 </html>

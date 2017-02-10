@@ -26,8 +26,8 @@ gulp.task('watch', function () {
 
 gulp.task('browserify', function () {
     return browserify('js/app.js', {
-            debug: true,
-        })
+        debug: true,
+    })
         .bundle()
         .pipe(source('bundle.js'))
         .pipe(buff())
@@ -36,8 +36,8 @@ gulp.task('browserify', function () {
 
 gulp.task('browserify-production', function () {
     return browserify('js/app.js', {
-            debug: false,
-        })
+        debug: false,
+    })
         .bundle()
         .pipe(source('bundle.js'))
         .pipe(buff())
@@ -58,9 +58,9 @@ gulp.task('sass', function () {
 gulp.task('sass-production', function () {
     return gulp.src('./sass/bundle.scss')
         .pipe(sass({
-            outputStyle: 'compressed'
-        }))
-        .pipe(sass({ errLogToConsole: true }))
+                outputStyle: 'compressed'
+            }).on('error', sass.logError)
+        )
         .pipe(gulp.dest('./public/css'));
 });
 
