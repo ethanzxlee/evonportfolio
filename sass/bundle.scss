@@ -17,6 +17,7 @@ $section-hello-background: #ffffff;
 $section-about-background: #292929;
 $section-projects-background: #ffffff;
 $section-contact-background: $theme-color;
+$projects-content-viewer-background: #000000;
 
 $global-spacing: 8px;
 $global-transition-duration: .4s;
@@ -326,6 +327,7 @@ section#projects {
                 margin: $global-spacing * 2;
                 transition: $global-transition-duration;
                 overflow: hidden;
+                cursor: pointer;
 
                 @media #{$mobile-only-media-query} {
                     margin-top: 0;
@@ -393,10 +395,3 @@ section#contact {
         }
     }
 }
-
-
-
-
-
-
-

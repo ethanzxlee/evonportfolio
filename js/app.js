@@ -341,6 +341,9 @@ var $ = require("jquery");
             urls.forEach(function (url, index) {
                 var projectContentItemContainer = $(document.createElement('div'));
                 projectContentItemContainer.addClass('projects-content-item-container');
+                projectContentItemContainer.on('click', function() {
+                    window.location.pathname = url.original;
+                });
 
                 var img = $(document.createElement('img'));
                 img.addClass('thumbnail');
@@ -396,7 +399,7 @@ var $ = require("jquery");
         for (var i = 0; i < sections.length; i++) {
             if ($(window).scrollTop() + 30 >= $(sections[i]).offset().top &&
                 $(window).scrollTop() + 30 < $(sections[i]).offset().top + $(sections[i]).outerHeight()) {
-
+                // If we find a section which is currently displayed    
                 var activeSectionId = $(sections[i]).attr('id');
                 var activeSectionListItem = $('#link-section-' + activeSectionId);
 
@@ -405,6 +408,7 @@ var $ = require("jquery");
                     activeSectionListItem.addClass('active');
                 }
 
+                // Stop finding the next one
                 break;
             }
         }
@@ -419,10 +423,6 @@ var $ = require("jquery");
             var horizontalDelta = (projectsContentContainerWrapper.innerWidth() - requiredWidth) / 2;
             projectsContentContainerWrapper.css('transform', 'translate(' + horizontalDelta + 'px)');
         }
-    }
-
-    function smoothScrollToSection() {
-
     }
 
 })();
