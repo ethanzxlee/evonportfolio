@@ -298,6 +298,8 @@ var $ = require("jquery");
         ],
     }
 
+    var contactInfoContainer;
+
     $(window).on('load', onLoad);
 
     function onLoad() {
@@ -308,6 +310,7 @@ var $ = require("jquery");
         layoutHelloIntroText();
         filterProjectType();
         layoutProjectContent();
+        layoutContactInfo();
 
         // Attach listeners
         $(window).on('scroll', updateStickySiteNav);
@@ -316,6 +319,7 @@ var $ = require("jquery");
         $(window).on('resize', listenToActiveSection);
         $(window).on('resize', layoutHelloIntroText);
         $(window).on('resize', layoutProjectContent);
+        $(window).on('resize', layoutContactInfo);
         projectsContentMenuTab.on('change', filterProjectType);
     }
 
@@ -329,6 +333,7 @@ var $ = require("jquery");
         helloIntroEmphasis = $('#hello-intro-emphasis');
         projectsContentMenuTab = $('input[name=projects-content-menu-tab]')
         projectsContentContainerWrapper = $('.projects-content-container-wrapper');
+        contactInfoContainer = $('.contact-info-container');
     }
 
     function filterProjectType() {
@@ -423,6 +428,26 @@ var $ = require("jquery");
             var horizontalDelta = (projectsContentContainerWrapper.innerWidth() - requiredWidth) / 2;
             projectsContentContainerWrapper.css('transform', 'translate(' + horizontalDelta + 'px)');
         }
+    }
+    
+    function layoutContactInfo() {
+        var maxWidth = 0;
+        var contactInfoItem = contactInfoContainer.children();
+
+        for (var i = 0; i < contactInfoItem.length; i++) {
+            var width = $(contactInfoItem[i]).outerWidth();
+            if (width > maxWidth) {
+                maxWidth = width;
+            }
+        }
+
+        var neededTranslateX = (contactInfoContainer.innerWidth() - maxWidth) / 2;
+
+        for (var i = 0; i < contactInfoItem.length; i++) {
+            $(contactInfoItem[i]).css('transform', 'translateX(' + neededTranslateX +'px)');
+        }
+
+        console.log(width, contactInfoContainer.innerWidth(), neededTranslateX);
     }
 
 })();
