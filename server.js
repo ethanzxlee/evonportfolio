@@ -7,7 +7,8 @@ var serve = serveStatic('public', {'index': ['index.html', 'index.htm']})
 
 // Create server
 var server = http.createServer(function onRequest (req, res) {
-  serve(req, res, finalhandler(req, res))
+  // serve(req, res, finalhandler(req, res))
+  res.redirect(301, 'https://evon-portfolio.firebaseapp.com');
 })
 
 // Listen
